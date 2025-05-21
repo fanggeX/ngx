@@ -3,46 +3,6 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container px-5">
-          <Link href="/" className="navbar-brand">
-            NGX Consulting
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link href="/" className="nav-link active" aria-current="page">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/about" className="nav-link">
-                  About Us
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/services" className="nav-link">
-                  Services
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/contact" className="nav-link">
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="container px-4 px-lg-5 my-5">
         <div className="row gx-4 gx-lg-5 align-items-center">
@@ -63,7 +23,7 @@ export default function Home() {
               sustainability goals.
             </p>
             <a className="btn btn-primary" href="/contact">
-              Request a Free Assessment
+              Start Your Complimentary Consultation
             </a>
           </div>
         </div>
