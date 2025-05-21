@@ -1,3 +1,8 @@
+// app/page.tsx
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <>
@@ -5,11 +10,17 @@ export default function Home() {
       <section className="container px-4 px-lg-5 my-5">
         <div className="row gx-4 gx-lg-5 align-items-center">
           <div className="col-lg-7">
-            <img
-              src="/assets/energy.jpg"
-              alt="Logistics & Energy"
-              className="img-fluid rounded mb-4 mb-lg-0"
-            />
+            {/* 16:9 ratio box for responsive cover */}
+            <div className="ratio ratio-16x9 mb-4 mb-lg-0 position-relative">
+              <Image
+                src="/assets/energy.jpg"
+                alt="Logistics & Energy"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                className="rounded"
+                priority
+              />
+            </div>
           </div>
           <div className="col-lg-5">
             <h1 className="font-weight-light">
@@ -20,9 +31,9 @@ export default function Home() {
               energy strategy to drive efficiency, cut costs, and advance your
               sustainability goals.
             </p>
-            <a className="btn btn-primary" href="/contact">
+            <Link href="/contact" className="btn btn-primary">
               Start Your Complimentary Consultation
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -64,9 +75,9 @@ export default function Home() {
                   <p className="card-text">{svc.text}</p>
                 </div>
                 <div className="card-footer">
-                  <a className="btn btn-primary btn-sm" href="/contact">
+                  <Link href="/contact" className="btn btn-primary btn-sm">
                     Learn More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
