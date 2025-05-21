@@ -1,17 +1,129 @@
-// app/page.tsx
-import fs from 'fs'
-import path from 'path'
+import Link from 'next/link'
 
-// this is a server component, so you can read files
 export default function Home() {
-  // load your static HTML
-  const html = fs.readFileSync(
-    path.join(process.cwd(), 'public', 'index.html'),
-    'utf8'
-  )
-
   return (
-    // dangerously inject the entire template
-    <div dangerouslySetInnerHTML={{ __html: html }} />
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container px-5">
+          <Link href="/" className="navbar-brand">
+            NGX Consulting
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link href="/" className="nav-link active" aria-current="page">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/about" className="nav-link">
+                  About Us
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/services" className="nav-link">
+                  Services
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/contact" className="nav-link">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="container px-4 px-lg-5 my-5">
+        <div className="row gx-4 gx-lg-5 align-items-center">
+          <div className="col-lg-7">
+            <img
+              src="/assets/energy.jpg"
+              alt="Logistics & Energy"
+              className="img-fluid rounded mb-4 mb-lg-0"
+            />
+          </div>
+          <div className="col-lg-5">
+            <h1 className="font-weight-light">
+              Optimizing Supply Chains & Powering Clean Energy
+            </h1>
+            <p>
+              At NGX Consulting, we blend deep logistics know-how with renewable
+              energy strategy to drive efficiency, cut costs, and advance your
+              sustainability goals.
+            </p>
+            <a className="btn btn-primary" href="/contact">
+              Request a Free Assessment
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Card */}
+      <div className="card text-white bg-secondary my-5 py-4 text-center">
+        <div className="card-body">
+          <p className="text-white m-0">
+            Schedule your complimentary strategy session and unlock both
+            operational efficiency and energy innovation!
+          </p>
+        </div>
+      </div>
+
+      {/* Services */}
+      <section id="services" className="container px-4 px-lg-5">
+        <div className="row gx-4 gx-lg-5">
+          {[
+            {
+              title: 'Freight & Unloading Optimization',
+              text:
+                'Leverage data-driven processes to streamline freight handling, reduce turnaround times, and gain full visibility across your network.',
+            },
+            {
+              title: 'Inventory Analytics & Control',
+              text:
+                'Implement real-time dashboards and advanced analytics to improve stock accuracy, minimize shrinkage, and accelerate inventory turnover.',
+            },
+            {
+              title: 'Renewable Energy Strategy',
+              text:
+                'Develop a bespoke roadmap for solar, wind, or hybrid projects that maximizes ROI and aligns with your sustainability targets.',
+            },
+          ].map((svc) => (
+            <div className="col-md-4 mb-5" key={svc.title}>
+              <div className="card h-100">
+                <div className="card-body">
+                  <h2 className="card-title">{svc.title}</h2>
+                  <p className="card-text">{svc.text}</p>
+                </div>
+                <div className="card-footer">
+                  <a className="btn btn-primary btn-sm" href="/contact">
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-5 bg-dark">
+        <div className="container px-4 px-lg-5">
+          <p className="m-0 text-center text-white">
+            © {new Date().getFullYear()} NGX Consulting. All Rights Reserved.
+          </p>
+        </div>
+      </footer>
+    </>
   )
 }
