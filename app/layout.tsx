@@ -1,6 +1,6 @@
 // app/layout.tsx
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/template.css';
+import '../styles/globals.scss';
 import Script from 'next/script';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -44,6 +44,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </div>
         </nav>
+
+        {/* === Slogan Banner === */}
++       <div className="bg-primary text-white text-center py-3">
++         <h4 className="m-0 fst-italic display-6">
++           Navigating Growth with <span className="text-warning">eXcellence</span>
++         </h4>
++       </div>
 
         {/* Page content */}
         {children}

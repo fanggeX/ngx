@@ -67,16 +67,16 @@ export default function ContactPage() {
           <div className="mb-4">
             <h5>Email</h5>
             <p>
-              <a href="mailto:info@ngxconsulting.com">
-                info@ngxconsulting.com
+              <a href="mailto:NGXconsultinginc@outlook.com">
+                NGXconsultinginc@outlook.com
               </a>
             </p>
           </div>
           <div className="mb-4">
             <h5>Phone</h5>
             <p>
-              <a href="tel:+1234567890">
-                +1 (234) 567-890
+              <a href="tel:+12817043130">
+                +1 281-704-3130
               </a>
             </p>
           </div>
